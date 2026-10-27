@@ -28,7 +28,7 @@ export default function HeroScene3D() {
     }
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x08090d, 0.035);
+    scene.fog = new THREE.FogExp2(0xffffff, 0.025);
 
     const camera = new THREE.PerspectiveCamera(
       60,
@@ -47,30 +47,30 @@ export default function HeroScene3D() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
-    // 1. Central Abstract Geodesic Network Sphere (representing interconnected intelligent systems)
+    // 1. Central Abstract Geodesic Network Sphere
     const sphereRadius = 7.5;
     const sphereGeo = new THREE.IcosahedronGeometry(sphereRadius, 2);
     
-    // Wireframe for the neural lattice
+    // Clean, crisp wireframe for light theme
     const wireframeMat = new THREE.MeshBasicMaterial({
-      color: 0x38bdf8,
+      color: 0x94a3b8,
       wireframe: true,
       transparent: true,
-      opacity: 0.12,
+      opacity: 0.25,
     });
     const networkSphere = new THREE.Mesh(sphereGeo, wireframeMat);
     scene.add(networkSphere);
 
-    // 2. Luminous Nodes on Vertices
+    // 2. Luminous Nodes on Vertices (Warm Amber & Deep Cyan & Charcoal)
     const posAttribute = sphereGeo.getAttribute('position');
     const vertexCount = posAttribute.count;
     const nodeGeo = new THREE.BufferGeometry();
     const nodePositions = new Float32Array(vertexCount * 3);
     const nodeColors = new Float32Array(vertexCount * 3);
 
-    const amberColor = new THREE.Color(0xf59e0b);
-    const cyanColor = new THREE.Color(0x06b6d4);
-    const copperColor = new THREE.Color(0xd97706);
+    const amberColor = new THREE.Color(0xd97706);
+    const cyanColor = new THREE.Color(0x0284c7);
+    const slateColor = new THREE.Color(0x334155);
 
     for (let i = 0; i < vertexCount; i++) {
       const x = posAttribute.getX(i);
@@ -81,9 +81,8 @@ export default function HeroScene3D() {
       nodePositions[i * 3 + 1] = y;
       nodePositions[i * 3 + 2] = z;
 
-      // Color nodes with warm amber, copper, and selective cyan
       const rnd = Math.random();
-      const col = rnd > 0.65 ? cyanColor : rnd > 0.3 ? amberColor : copperColor;
+      const col = rnd > 0.6 ? cyanColor : rnd > 0.25 ? amberColor : slateColor;
       nodeColors[i * 3] = col.r;
       nodeColors[i * 3 + 1] = col.g;
       nodeColors[i * 3 + 2] = col.b;
@@ -93,20 +92,19 @@ export default function HeroScene3D() {
     nodeGeo.setAttribute('color', new THREE.BufferAttribute(nodeColors, 3));
 
     const nodeMat = new THREE.PointsMaterial({
-      size: 0.32,
+      size: 0.38,
       vertexColors: true,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.9,
     });
     const nodes = new THREE.Points(nodeGeo, nodeMat);
     networkSphere.add(nodes);
 
-    // 3. Flowing Data Ribbons / Particle Streams (Amber and Cyan)
+    // 3. Flowing Data Ribbons / Particle Streams
     const streamCount = 180;
     const streamGeo = new THREE.BufferGeometry();
     const streamPos = new Float32Array(streamCount * 3);
     const streamColors = new Float32Array(streamCount * 3);
-    const streamSpeeds = new Float32Array(streamCount);
 
     for (let i = 0; i < streamCount; i++) {
       const radius = 9 + Math.random() * 8;
@@ -117,27 +115,25 @@ export default function HeroScene3D() {
       streamPos[i * 3 + 1] = radius * Math.sin(phi);
       streamPos[i * 3 + 2] = radius * Math.cos(phi) * Math.sin(theta);
 
-      const col = i % 3 === 0 ? cyanColor : i % 2 === 0 ? amberColor : copperColor;
+      const col = i % 3 === 0 ? cyanColor : i % 2 === 0 ? amberColor : slateColor;
       streamColors[i * 3] = col.r;
       streamColors[i * 3 + 1] = col.g;
       streamColors[i * 3 + 2] = col.b;
-
-      streamSpeeds[i] = 0.003 + Math.random() * 0.007;
     }
 
     streamGeo.setAttribute('position', new THREE.BufferAttribute(streamPos, 3));
     streamGeo.setAttribute('color', new THREE.BufferAttribute(streamColors, 3));
 
     const streamMat = new THREE.PointsMaterial({
-      size: 0.22,
+      size: 0.28,
       vertexColors: true,
       transparent: true,
-      opacity: 0.65,
+      opacity: 0.7,
     });
     const streams = new THREE.Points(streamGeo, streamMat);
     scene.add(streams);
 
-    // 4. Floating Engineering Planes / Small Glass Cubes
+    // 4. Floating Bounding Wireframe Cubes
     const cubeGroup = new THREE.Group();
     const cubeCount = 12;
     const cubeGeo = new THREE.BoxGeometry(0.8, 0.8, 0.8);
@@ -145,7 +141,7 @@ export default function HeroScene3D() {
 
     for (let i = 0; i < cubeCount; i++) {
       const edgeMat = new THREE.LineBasicMaterial({
-        color: i % 2 === 0 ? 0xf59e0b : 0x06b6d4,
+        color: i % 2 === 0 ? 0xd97706 : 0x0284c7,
         transparent: true,
         opacity: 0.35,
       });
@@ -197,7 +193,6 @@ export default function HeroScene3D() {
       const delta = clock.getDelta();
 
       if (!prefersReducedMotion) {
-        // Smooth rotation
         networkSphere.rotation.y += delta * 0.08;
         networkSphere.rotation.x += delta * 0.03;
 
@@ -210,7 +205,6 @@ export default function HeroScene3D() {
           c.rotation.y += delta * (0.15 + idx * 0.03);
         });
 
-        // Parallax damping
         targetX += (mouseX - targetX) * 0.05;
         targetY += (mouseY - targetY) * 0.05;
 
@@ -229,7 +223,6 @@ export default function HeroScene3D() {
       window.removeEventListener('resize', onResize);
       cancelAnimationFrame(animationFrameId);
 
-      // Clean up geometries and materials
       sphereGeo.dispose();
       wireframeMat.dispose();
       nodeGeo.dispose();
@@ -253,7 +246,7 @@ export default function HeroScene3D() {
       aria-hidden="true"
     >
       {!webglSupported && (
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-500/10 via-transparent to-cyan-500/10 opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-50/50 via-white to-sky-50/50" />
       )}
     </div>
   );

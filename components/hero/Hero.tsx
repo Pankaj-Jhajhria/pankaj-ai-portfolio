@@ -20,40 +20,40 @@ export default function Hero() {
       {/* 3D Canvas Background */}
       <HeroScene3D />
 
-      {/* Ambient gradient meshes */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-amber-500/10 via-copper-600/10 to-cyan-500/10 blur-[130px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-amber-600/5 blur-[100px] rounded-full pointer-events-none -z-10" />
+      {/* Ambient subtle light gradient meshes */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-amber-200/25 via-slate-100/40 to-sky-100/30 blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-10 w-72 h-72 bg-amber-200/20 blur-[100px] rounded-full pointer-events-none -z-10" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         {/* Availability Badge */}
-        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-amber-500/30 text-amber-300 text-xs font-mono tracking-wide mb-6 backdrop-blur-md shadow-sm shadow-amber-500/10 animate-fade-in">
-          <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-50/90 border border-amber-300/80 text-amber-800 text-xs font-mono font-medium tracking-wide mb-6 backdrop-blur-md shadow-xs animate-fade-in">
+          <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
           <span>Available for AI / ML & GenAI Internships</span>
         </div>
 
         {/* Primary Name Header */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-3">
-          <span className="text-metallic-gold drop-shadow-sm">
+          <span className="text-slate-900 tracking-tight">
             {PERSONAL_INFO.name.toUpperCase()}
           </span>
         </h1>
 
         {/* Professional Title & Positioning */}
         <div className="mb-6">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-cyan-400 font-mono tracking-tight mb-3">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-sky-700 font-mono tracking-tight mb-3">
             {PERSONAL_INFO.title}
           </h2>
-          <p className="text-xs sm:text-sm font-medium text-slate-400 tracking-wider uppercase max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm font-semibold text-slate-600 tracking-wider uppercase max-w-2xl mx-auto">
             {PERSONAL_INFO.positioning}
           </p>
         </div>
 
         {/* Supporting Hook */}
         <div className="max-w-3xl mx-auto mb-10 space-y-3">
-          <p className="text-lg sm:text-xl font-medium text-slate-200">
+          <p className="text-lg sm:text-xl font-semibold text-slate-800">
             “{PERSONAL_INFO.tagline}”
           </p>
-          <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             Artificial Intelligence & Data Science student at IIITDM Kurnool. I translate machine learning theory into working, evaluated software—spanning evidence-grounded RAG docents, out-of-core data systems handling 5M+ reviews, and multimodal vision architectures.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-14">
           <a
             href="#featured-projects"
-            className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl font-semibold text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 hover:from-amber-300 hover:to-amber-400 shadow-lg shadow-amber-500/25 transition-all transform hover:-translate-y-0.5"
+            className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 hover:from-amber-600 hover:to-amber-700 shadow-md shadow-amber-500/25 transition-all transform hover:-translate-y-0.5"
           >
             <span>Explore Projects</span>
             <ArrowRight className="w-4 h-4" />
@@ -71,9 +71,9 @@ export default function Hero() {
           <a
             href={PERSONAL_INFO.resumePath}
             download="Pankaj_Jhajhria_AI_ML_Resume.pdf"
-            className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl font-semibold text-sm text-slate-100 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] hover:border-amber-400/40 backdrop-blur-md transition-all transform hover:-translate-y-0.5"
+            className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl font-semibold text-sm text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 hover:border-amber-500 shadow-xs backdrop-blur-md transition-all transform hover:-translate-y-0.5"
           >
-            <FileDown className="w-4 h-4 text-amber-400" />
+            <FileDown className="w-4 h-4 text-amber-600" />
             <span>Download Resume (PDF)</span>
           </a>
 
@@ -81,7 +81,7 @@ export default function Hero() {
             href={PERSONAL_INFO.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl font-semibold text-sm text-slate-300 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] backdrop-blur-md transition-all"
+            className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl font-semibold text-sm text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-300 backdrop-blur-md shadow-xs transition-all"
             title="Inspect Source Code on GitHub"
           >
             <GithubIcon className="w-4 h-4" />
@@ -90,51 +90,51 @@ export default function Hero() {
         </div>
 
         {/* Subtle Social Links */}
-        <div className="flex items-center justify-center space-x-6 text-xs text-slate-400 mb-12">
+        <div className="flex items-center justify-center space-x-6 text-xs text-slate-600 mb-12">
           <a
             href={PERSONAL_INFO.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-1.5 hover:text-cyan-400 transition-colors"
+            className="inline-flex items-center space-x-1.5 hover:text-sky-700 transition-colors"
           >
             <LinkedinIcon className="w-3.5 h-3.5" />
             <span>LinkedIn /pankaj-jhajhria</span>
           </a>
-          <span className="text-slate-700">·</span>
+          <span className="text-slate-300">·</span>
           <a
             href={PERSONAL_INFO.x}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-1.5 hover:text-slate-200 transition-colors"
+            className="inline-flex items-center space-x-1.5 hover:text-slate-900 transition-colors"
           >
             <span>X @PkFlamer</span>
           </a>
-          <span className="text-slate-700">·</span>
+          <span className="text-slate-300">·</span>
           <a
             href={`mailto:${PERSONAL_INFO.email}`}
-            className="inline-flex items-center space-x-1.5 hover:text-amber-400 transition-colors font-mono"
+            className="inline-flex items-center space-x-1.5 hover:text-amber-700 transition-colors font-mono font-medium"
           >
             <span>{PERSONAL_INFO.email}</span>
           </a>
         </div>
 
         {/* Quick Highlights / Trust Badges */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto pt-4 border-t border-white/[0.08]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto pt-4 border-t border-slate-200">
           <div className="p-3.5 rounded-xl glass-panel text-left">
-            <div className="text-xl font-bold font-mono text-amber-400">100.0%</div>
-            <div className="text-xs text-slate-400 mt-0.5">Recall@5 (MuseGuide RAG)</div>
+            <div className="text-xl font-bold font-mono text-amber-600">100.0%</div>
+            <div className="text-xs text-slate-600 mt-0.5">Recall@5 (MuseGuide RAG)</div>
           </div>
           <div className="p-3.5 rounded-xl glass-panel text-left">
-            <div className="text-xl font-bold font-mono text-cyan-400">2,043,926</div>
-            <div className="text-xs text-slate-400 mt-0.5">Test Reviews Evaluated</div>
+            <div className="text-xl font-bold font-mono text-sky-700">2,043,926</div>
+            <div className="text-xs text-slate-600 mt-0.5">Test Reviews Evaluated</div>
           </div>
           <div className="p-3.5 rounded-xl glass-panel text-left">
-            <div className="text-xl font-bold font-mono text-amber-400">4 Models</div>
-            <div className="text-xs text-slate-400 mt-0.5">Live Vision Benchmark App</div>
+            <div className="text-xl font-bold font-mono text-amber-600">4 Models</div>
+            <div className="text-xs text-slate-600 mt-0.5">Live Vision Benchmark App</div>
           </div>
           <div className="p-3.5 rounded-xl glass-panel text-left">
-            <div className="text-xl font-bold font-mono text-cyan-400">14.7 ms</div>
-            <div className="text-xs text-slate-400 mt-0.5">Steady-State Latency</div>
+            <div className="text-xl font-bold font-mono text-sky-700">14.7 ms</div>
+            <div className="text-xs text-slate-600 mt-0.5">Steady-State Latency</div>
           </div>
         </div>
       </div>

@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #08090d;
-  --foreground: #f1f5f9;
-  --panel: rgba(16, 20, 31, 0.7);
-  --panel-border: rgba(255, 255, 255, 0.08);
-  --accent-amber: #f59e0b;
-  --accent-copper: #d97706;
-  --accent-cyan: #06b6d4;
-  --accent-cyan-glow: rgba(6, 182, 212, 0.15);
-  --accent-amber-glow: rgba(245, 158, 11, 0.15);
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --panel: #ffffff;
+  --panel-border: #e2e8f0;
+  --accent-amber: #d97706;
+  --accent-copper: #b45309;
+  --accent-cyan: #0284c7;
+  --accent-cyan-glow: rgba(2, 132, 199, 0.1);
+  --accent-amber-glow: rgba(217, 119, 6, 0.1);
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -22,34 +22,31 @@ body {
   color: var(--foreground);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
-  selection-background-color: #f59e0b;
-  selection-color: #08090d;
 }
 
 ::selection {
-  background: #f59e0b;
-  color: #08090d;
+  background: #fde68a;
+  color: #78350f;
 }
 
-/* Technical grid background */
+/* Technical grid background in clean light slate */
 .bg-tech-grid {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 36px 36px;
 }
 
 .bg-dot-grid {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
-/* Glassmorphism panel */
+/* Clean Professional White Panel */
 .glass-panel {
-  background: rgba(14, 18, 27, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
 }
 
 .glass-panel-hover {
@@ -57,56 +54,40 @@ body {
 }
 
 .glass-panel-hover:hover {
-  background: rgba(19, 25, 38, 0.75);
-  border-color: rgba(245, 158, 11, 0.25);
-  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(245, 158, 11, 0.12);
+  border-color: rgba(217, 119, 6, 0.35);
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 0 16px -4px rgba(217, 119, 6, 0.15);
   transform: translateY(-2px);
 }
 
-/* Metallic text gradients */
+/* Executive Metallic & Gradient text */
 .text-metallic-gold {
-  background: linear-gradient(135deg, #ffffff 0%, #fef08a 30%, #f59e0b 70%, #d97706 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-metallic-silver {
-  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #94a3b8 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #b45309 75%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-cyan-amber-gradient {
-  background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 40%, #fbbf24 100%);
+  background: linear-gradient(135deg, #0369a1 0%, #0284c7 40%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Subtle glow effects */
-.glow-amber {
-  box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.25);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.2);
-}
-
-/* Custom scrollbar */
+/* Custom scrollbar for white theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #090a0f;
+  background: #f8fafc;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e2433;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d97706;
+  background: #94a3b8;
 }
 
 @media (prefers-reduced-motion: reduce) {

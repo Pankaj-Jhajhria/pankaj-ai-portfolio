@@ -5,18 +5,18 @@ import { GithubIcon } from '@/components/common/Icons';
 
 export default function FeaturedProjects() {
   return (
-    <section id="featured-projects" className="py-24 relative border-t border-white/[0.06]">
+    <section id="featured-projects" className="py-24 relative border-t border-slate-200/80 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-wider text-amber-400 mb-2">
+          <div className="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-wider text-amber-700 mb-2">
             <Flame className="w-3.5 h-3.5" />
             <span>Portfolio Case Studies</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-100">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
             Featured AI &amp; Machine Learning Systems
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-400">
+          <p className="mt-3 text-sm sm:text-base text-slate-600">
             Substantial implementations with reproducible source code, verified benchmark logs, and deployed interfaces.
           </p>
         </div>
@@ -24,27 +24,26 @@ export default function FeaturedProjects() {
         {/* Featured Projects Cards Stack */}
         <div className="space-y-12">
           {FEATURED_PROJECTS.map((project, index) => {
-            const isEven = index % 2 === 0;
             return (
               <div
                 key={project.id}
-                className="rounded-3xl glass-panel p-6 sm:p-8 lg:p-10 relative overflow-hidden transition-all duration-300 hover:border-white/[0.14] hover:shadow-2xl hover:shadow-black/60 group"
+                className="rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 lg:p-10 relative overflow-hidden transition-all duration-300 hover:border-amber-400 hover:shadow-xl hover:shadow-slate-200/60 group"
               >
                 {/* Subtle top edge gradient bar */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-amber-500/60 via-copper-500/40 to-cyan-500/60" />
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-amber-500/80 via-amber-600/60 to-sky-600/80" />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   {/* Left Column: Project Overview & Core Implementation */}
                   <div className="lg:col-span-7 space-y-5">
                     {/* Category & Status */}
                     <div className="flex flex-wrap items-center gap-2.5">
-                      <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium tracking-wide bg-amber-500/10 text-amber-300 border border-amber-500/20">
+                      <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold tracking-wide bg-amber-50 text-amber-800 border border-amber-200">
                         {project.category}
                       </span>
-                      <span className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-medium tracking-wide ${
+                      <span className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold tracking-wide ${
                         project.status === 'Live Deployed'
-                          ? 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/20'
-                          : 'bg-cyan-500/10 text-cyan-300 border border-cyan-500/20'
+                          ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                          : 'bg-sky-50 text-sky-800 border border-sky-200'
                       }`}>
                         ● {project.status}
                       </span>
@@ -52,30 +51,30 @@ export default function FeaturedProjects() {
 
                     {/* Title & Subtitle */}
                     <div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-slate-100 group-hover:text-amber-300 transition-colors">
+                      <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-sm font-medium text-slate-400 mt-1">
+                      <p className="text-sm font-medium text-slate-600 mt-1">
                         {project.subtitle}
                       </p>
                     </div>
 
                     {/* Problem Statement */}
-                    <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.05]">
-                      <div className="text-xs font-mono text-amber-400/90 mb-1 uppercase tracking-wider">
+                    <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                      <div className="text-xs font-mono font-semibold text-amber-800 mb-1 uppercase tracking-wider">
                         PROBLEM ADDRESSED
                       </div>
-                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                         {project.problem}
                       </p>
                     </div>
 
                     {/* Implementation & Engineering Contribution */}
                     <div>
-                      <div className="text-xs font-mono text-slate-400 mb-1.5 uppercase tracking-wider">
+                      <div className="text-xs font-mono font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">
                         IMPLEMENTATION &amp; TECHNICAL ARCHITECTURE
                       </div>
-                      <p className="text-sm text-slate-300 leading-relaxed">
+                      <p className="text-sm text-slate-700 leading-relaxed">
                         {project.implementation}
                       </p>
                     </div>
@@ -83,8 +82,8 @@ export default function FeaturedProjects() {
                     {/* Highlights bullet points */}
                     <div className="space-y-1.5 pt-1">
                       {project.highlights.map((h, i) => (
-                        <div key={i} className="flex items-start space-x-2 text-xs text-slate-300">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 mt-0.5 shrink-0" />
+                        <div key={i} className="flex items-start space-x-2 text-xs text-slate-700">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0" />
                           <span>{h}</span>
                         </div>
                       ))}
@@ -95,7 +94,7 @@ export default function FeaturedProjects() {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2.5 py-1 text-xs font-mono rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.06]"
+                          className="px-2.5 py-1 text-xs font-mono font-medium rounded-md bg-slate-100 text-slate-700 border border-slate-200"
                         >
                           {tag}
                         </span>
@@ -108,7 +107,7 @@ export default function FeaturedProjects() {
                         href={project.codeUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-200 bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.1] hover:border-amber-400/40 transition-all"
+                        className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 hover:border-amber-500 shadow-xs transition-all"
                       >
                         <GithubIcon className="w-3.5 h-3.5" />
                         <span>Inspect Repository</span>
@@ -119,7 +118,7 @@ export default function FeaturedProjects() {
                           href={project.modelRepoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] transition-all"
+                          className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-300 shadow-xs transition-all"
                         >
                           <GitFork className="w-3.5 h-3.5" />
                           <span>Model Training Repo</span>
@@ -131,7 +130,7 @@ export default function FeaturedProjects() {
                           href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-md shadow-amber-500/20 transition-all"
+                          className="inline-flex items-center space-x-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 shadow-sm shadow-amber-500/25 transition-all"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
                           <span>Launch Live App</span>
@@ -142,9 +141,9 @@ export default function FeaturedProjects() {
 
                   {/* Right Column: Quantitative Verified Metrics Dashboard */}
                   <div className="lg:col-span-5 flex flex-col justify-between space-y-4 h-full">
-                    <div className="p-6 rounded-2xl bg-[#0b0e19]/90 border border-white/[0.08] shadow-xl space-y-4">
-                      <div className="flex items-center justify-between pb-3 border-b border-white/[0.08]">
-                        <div className="flex items-center space-x-2 text-xs font-mono text-cyan-400 uppercase tracking-wider">
+                    <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-xs space-y-4">
+                      <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+                        <div className="flex items-center space-x-2 text-xs font-mono font-semibold text-sky-800 uppercase tracking-wider">
                           <BarChart2 className="w-4 h-4" />
                           <span>Verified Evaluation Metrics</span>
                         </div>
@@ -155,20 +154,20 @@ export default function FeaturedProjects() {
                         {project.metrics.map((metric, idx) => (
                           <div
                             key={idx}
-                            className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06] flex flex-col justify-center"
+                            className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col justify-center"
                           >
-                            <span className="text-lg font-bold font-mono text-amber-300 tracking-tight">
+                            <span className="text-lg font-bold font-mono text-amber-700 tracking-tight">
                               {metric.value}
                             </span>
-                            <span className="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                            <span className="text-[11px] text-slate-600 mt-0.5 leading-snug">
                               {metric.label}
                             </span>
                           </div>
                         ))}
                       </div>
 
-                      <div className="text-[11px] text-slate-400 pt-2 border-t border-white/[0.06] flex items-center space-x-1.5">
-                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <div className="text-[11px] text-slate-500 pt-2 border-t border-slate-200 flex items-center space-x-1.5">
+                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                         <span>All numbers verified against actual test logs &amp; benchmark reports.</span>
                       </div>
                     </div>
