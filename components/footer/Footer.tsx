@@ -17,33 +17,33 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 relative border-t border-slate-200 bg-slate-50">
+    <footer className="py-12 relative border-t border-[#e1ebf2] bg-[#f8fbfc]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Identity */}
           <div className="flex items-center space-x-3 text-center sm:text-left">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 p-[1px] shadow-xs">
-              <div className="w-full h-full bg-amber-50 rounded-[7px] flex items-center justify-center font-bold text-xs text-amber-700">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FFC067] via-[#66F4FF] to-[#66C4FF] p-[1.5px] shadow-xs">
+              <div className="w-full h-full bg-white rounded-full flex items-center justify-center font-bold text-xs text-[#0f1e2e]">
                 PJ
               </div>
             </div>
             <div>
-              <div className="text-sm font-semibold text-slate-900">
+              <div className="text-sm font-bold text-[#0f1e2e]">
                 {PERSONAL_INFO.name}
               </div>
-              <div className="text-xs text-slate-500 font-mono">
+              <div className="text-xs text-[#7d99aa] font-mono font-medium">
                 AI Engineer · IIITDM Kurnool
               </div>
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <a
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 hover:text-slate-900 transition-colors"
+              className="p-2 text-[#7d99aa] hover:text-[#0f1e2e] hover:bg-[#66c4ff]/10 rounded-full transition-colors"
               aria-label="GitHub"
             >
               <GithubIcon className="w-4 h-4" />
@@ -52,7 +52,7 @@ export default function Footer() {
               href={PERSONAL_INFO.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 hover:text-sky-700 transition-colors"
+              className="p-2 text-[#7d99aa] hover:text-[#0284c7] hover:bg-[#66c4ff]/10 rounded-full transition-colors"
               aria-label="LinkedIn"
             >
               <LinkedinIcon className="w-4 h-4" />
@@ -61,7 +61,7 @@ export default function Footer() {
               href={PERSONAL_INFO.x}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-500 hover:text-amber-700 transition-colors text-sm font-bold"
+              className="p-2 text-[#7d99aa] hover:text-[#d97706] hover:bg-[#FFC067]/15 rounded-full transition-colors text-sm font-bold"
               aria-label="X"
             >
               𝕏
@@ -69,11 +69,11 @@ export default function Footer() {
           </div>
 
           {/* Back to Top */}
-          <div className="flex items-center space-x-4 text-xs text-slate-500">
+          <div className="flex items-center space-x-4 text-xs text-[#7d99aa] font-medium">
             <span>© {currentYear} {PERSONAL_INFO.name}. All rights reserved.</span>
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-white hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs transition-colors"
+              className="p-2 rounded-full bg-white hover:bg-[#f0f8ff] text-[#5a7385] hover:text-[#0f1e2e] border border-[#e1ebf2] hover:border-[#66c4ff] shadow-xs transition-colors"
               title="Back to top"
               aria-label="Back to top"
             >

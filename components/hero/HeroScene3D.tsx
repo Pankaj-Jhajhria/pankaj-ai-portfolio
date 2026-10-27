@@ -28,7 +28,7 @@ export default function HeroScene3D() {
     }
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0xffffff, 0.025);
+    scene.fog = new THREE.FogExp2(0xfcfdfd, 0.022);
 
     const camera = new THREE.PerspectiveCamera(
       60,
@@ -51,26 +51,27 @@ export default function HeroScene3D() {
     const sphereRadius = 7.5;
     const sphereGeo = new THREE.IcosahedronGeometry(sphereRadius, 2);
     
-    // Clean, crisp wireframe for light theme
+    // Coastal Slate wireframe
     const wireframeMat = new THREE.MeshBasicMaterial({
-      color: 0x94a3b8,
+      color: 0x7d99aa,
       wireframe: true,
       transparent: true,
-      opacity: 0.25,
+      opacity: 0.28,
     });
     const networkSphere = new THREE.Mesh(sphereGeo, wireframeMat);
     scene.add(networkSphere);
 
-    // 2. Luminous Nodes on Vertices (Warm Amber & Deep Cyan & Charcoal)
+    // 2. California Beaches Luminous Nodes (Pastel Orange #FFC067, Seafoam #66F4FF, Sky Blue #66C4FF, Coastal Slate #7D99AA)
     const posAttribute = sphereGeo.getAttribute('position');
     const vertexCount = posAttribute.count;
     const nodeGeo = new THREE.BufferGeometry();
     const nodePositions = new Float32Array(vertexCount * 3);
     const nodeColors = new Float32Array(vertexCount * 3);
 
-    const amberColor = new THREE.Color(0xd97706);
-    const cyanColor = new THREE.Color(0x0284c7);
-    const slateColor = new THREE.Color(0x334155);
+    const beachOrange = new THREE.Color(0xffc067);
+    const seafoamCyan = new THREE.Color(0x66f4ff);
+    const skyBlue = new THREE.Color(0x66c4ff);
+    const coastalSlate = new THREE.Color(0x7d99aa);
 
     for (let i = 0; i < vertexCount; i++) {
       const x = posAttribute.getX(i);
@@ -82,7 +83,7 @@ export default function HeroScene3D() {
       nodePositions[i * 3 + 2] = z;
 
       const rnd = Math.random();
-      const col = rnd > 0.6 ? cyanColor : rnd > 0.25 ? amberColor : slateColor;
+      const col = rnd > 0.65 ? seafoamCyan : rnd > 0.35 ? beachOrange : rnd > 0.15 ? skyBlue : coastalSlate;
       nodeColors[i * 3] = col.r;
       nodeColors[i * 3 + 1] = col.g;
       nodeColors[i * 3 + 2] = col.b;
@@ -92,15 +93,15 @@ export default function HeroScene3D() {
     nodeGeo.setAttribute('color', new THREE.BufferAttribute(nodeColors, 3));
 
     const nodeMat = new THREE.PointsMaterial({
-      size: 0.38,
+      size: 0.42,
       vertexColors: true,
       transparent: true,
-      opacity: 0.9,
+      opacity: 0.95,
     });
     const nodes = new THREE.Points(nodeGeo, nodeMat);
     networkSphere.add(nodes);
 
-    // 3. Flowing Data Ribbons / Particle Streams
+    // 3. Flowing Data Ribbons / Particle Streams (Coastal surf & sand)
     const streamCount = 180;
     const streamGeo = new THREE.BufferGeometry();
     const streamPos = new Float32Array(streamCount * 3);
@@ -115,7 +116,7 @@ export default function HeroScene3D() {
       streamPos[i * 3 + 1] = radius * Math.sin(phi);
       streamPos[i * 3 + 2] = radius * Math.cos(phi) * Math.sin(theta);
 
-      const col = i % 3 === 0 ? cyanColor : i % 2 === 0 ? amberColor : slateColor;
+      const col = i % 3 === 0 ? seafoamCyan : i % 2 === 0 ? beachOrange : skyBlue;
       streamColors[i * 3] = col.r;
       streamColors[i * 3 + 1] = col.g;
       streamColors[i * 3 + 2] = col.b;
@@ -125,25 +126,25 @@ export default function HeroScene3D() {
     streamGeo.setAttribute('color', new THREE.BufferAttribute(streamColors, 3));
 
     const streamMat = new THREE.PointsMaterial({
-      size: 0.28,
+      size: 0.30,
       vertexColors: true,
       transparent: true,
-      opacity: 0.7,
+      opacity: 0.8,
     });
     const streams = new THREE.Points(streamGeo, streamMat);
     scene.add(streams);
 
-    // 4. Floating Bounding Wireframe Cubes
+    // 4. Floating Bounding Wireframe Cubes (California pastel orange & sky blue)
     const cubeGroup = new THREE.Group();
     const cubeCount = 12;
-    const cubeGeo = new THREE.BoxGeometry(0.8, 0.8, 0.8);
+    const cubeGeo = new THREE.BoxGeometry(0.85, 0.85, 0.85);
     const cubeEdges = new THREE.EdgesGeometry(cubeGeo);
 
     for (let i = 0; i < cubeCount; i++) {
       const edgeMat = new THREE.LineBasicMaterial({
-        color: i % 2 === 0 ? 0xd97706 : 0x0284c7,
+        color: i % 2 === 0 ? 0xffc067 : 0x66c4ff,
         transparent: true,
-        opacity: 0.35,
+        opacity: 0.45,
       });
       const wireCube = new THREE.LineSegments(cubeEdges, edgeMat);
 

@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#ffffff',
+  themeColor: '#fcfdfd',
   width: 'device-width',
   initialScale: 1,
 };
@@ -58,7 +58,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-white text-slate-900 antialiased min-h-screen flex flex-col selection:bg-amber-100 selection:text-amber-900 bg-tech-grid">
+      <body className="bg-[#fcfdfd] text-[#0f1e2e] antialiased min-h-screen flex flex-col selection:bg-[#FFC067]/30 selection:text-[#7C3A00] bg-tech-grid">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
