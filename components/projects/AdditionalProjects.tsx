@@ -11,13 +11,13 @@ export default function AdditionalProjects() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-wider text-[#0284c7] mb-2 font-bold">
             <Code2 className="w-3.5 h-3.5" />
-            <span>Exploratory &amp; Domain Systems</span>
+            <span>Public GitHub Catalogue</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0f1e2e]">
-            Additional Projects &amp; Prototypes
+            All Public Projects &amp; Repositories
           </h2>
           <p className="mt-3 text-sm sm:text-base text-[#5a7385]">
-            Sequence modeling, competitive ML pipelines, computer vision prototypes, and algorithm implementations.
+            Every public repository in one place—from featured production systems and model training to learning, tooling, and profile source.
           </p>
         </div>
 

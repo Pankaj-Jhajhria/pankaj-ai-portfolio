@@ -222,7 +222,55 @@ export const FEATURED_PROJECTS: Project[] = [
   },
 ];
 
+/** Every public repository on the GitHub profile. Featured work appears above as case studies too. */
 export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
+  {
+    id: "museguide-repository",
+    title: "MuseGuide — AI Museum Guide Using RAG",
+    description:
+      "Evidence-grounded museum guide with vector retrieval, verified accession citations, voice input, and spoken answers. Featured above with evaluation details.",
+    tags: ["RAG", "FAISS", "Groq", "Streamlit"],
+    status: "Featured Case Study",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/Museum-Guide-Using-Rag-MuseGuide",
+  },
+  {
+    id: "reviewradar-repository",
+    title: "ReviewRadar — Large-Scale Sentiment Analysis",
+    description:
+      "Out-of-core sentiment analysis pipeline for Amazon review data, built with DuckDB and cost-sensitive NLP models. Featured above with benchmark results.",
+    tags: ["Python", "DuckDB", "scikit-learn", "NLP"],
+    status: "Featured Case Study",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/ReviewRadar",
+  },
+  {
+    id: "rgbt-app-repository",
+    title: "RGB-T 4-Architecture Comparison App",
+    description:
+      "Interactive Streamlit application for comparing RGB-thermal semantic-segmentation architectures on images and sample scenes.",
+    tags: ["Python", "Streamlit", "Computer Vision", "PyTorch"],
+    status: "Featured Case Study",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/RGBT_4Architecture_Comparison_App",
+    demoUrl: "https://rgb-thermal.streamlit.app/",
+  },
+  {
+    id: "rgbt-training-repository",
+    title: "RGB-T Semantic Segmentation",
+    description:
+      "Training repository for multimodal RGB and thermal semantic segmentation, including the model work behind the live benchmark app.",
+    tags: ["PyTorch", "ResNet-18", "Sensor Fusion", "Segmentation"],
+    status: "Model Training",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/RGB-T-Semantic-Segmentation",
+  },
+  {
+    id: "filmsense-repository",
+    title: "FilmSense — Movie Recommendation System",
+    description:
+      "Content-based movie recommendation application using weighted metadata, TF-IDF similarity, and fuzzy title search.",
+    tags: ["Python", "scikit-learn", "NLP", "Streamlit"],
+    status: "Featured Case Study",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/Movie-Recommendation-System-FilmSense-",
+    demoUrl: "https://filmsense.streamlit.app/",
+  },
   {
     id: "melodyloop",
     title: "MelodyLoop — LSTM Music Generation",
@@ -260,13 +308,13 @@ export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
     codeUrl: "https://github.com/Pankaj-Jhajhria/Satellite-Image-Segmentation",
   },
   {
-    id: "ml-from-scratch",
-    title: "ML Algorithms From Scratch",
+    id: "advanced-python",
+    title: "Advanced Python",
     description:
-      "Pure Python/NumPy implementations of core machine learning algorithms without ML libraries: Decision Trees (Gini/Entropy), Gaussian Naive Bayes, Logistic Regression, and Linear Regression with Normal Equations.",
-    tags: ["Python", "NumPy", "Algorithms", "Mathematics", "Optimization"],
-    status: "Foundational Code",
-    codeUrl: "https://github.com/Pankaj-Jhajhria",
+      "Hands-on Python learning repository covering fundamentals, APIs, file handling, OOP, generators, NumPy, pandas, and data exploration notebooks.",
+    tags: ["Python", "NumPy", "pandas", "Jupyter"],
+    status: "Learning Repository",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/Advanced_Python",
   },
   {
     id: "findit",
@@ -275,7 +323,53 @@ export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
       "Full-stack web application for campus community lost-and-found reporting featuring persistent MySQL storage, category filtering, WhatsApp direct connects, and an administrative moderation panel.",
     tags: ["PHP", "MySQL", "Full-Stack", "Web Development"],
     status: "Live Deployed",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/Lost-and-Found",
     demoUrl: "https://lostfoundd.freedev.app/",
+  },
+  {
+    id: "dl-journey",
+    title: "DL Journey",
+    description:
+      "Repository for documenting and organizing deep-learning learning work and experiments.",
+    tags: ["Deep Learning", "Learning"],
+    status: "Learning Repository",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/DL-Journey",
+  },
+  {
+    id: "dsa",
+    title: "DSA",
+    description:
+      "Data structures and algorithms practice repository for structured problem-solving work.",
+    tags: ["C++", "Algorithms", "Problem Solving"],
+    status: "Practice Repository",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/DSA",
+  },
+  {
+    id: "git-crash-course",
+    title: "Git Crash Course",
+    description:
+      "Git and GitHub learning notes, command references, and practical workflow material.",
+    tags: ["Git", "GitHub", "Developer Tools"],
+    status: "Learning Repository",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/Git-Crash-Course",
+  },
+  {
+    id: "profile-repository",
+    title: "GitHub Profile Repository",
+    description:
+      "The source for the profile README, project map, and visual assets shown on the GitHub profile.",
+    tags: ["GitHub", "Markdown", "Profile"],
+    status: "Profile Source",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/Pankaj-Jhajhria",
+  },
+  {
+    id: "portfolio-source",
+    title: "AI Portfolio — Public Source",
+    description:
+      "Public source repository for this Next.js portfolio website, including the project catalogue and presentation layers.",
+    tags: ["Next.js", "TypeScript", "Portfolio"],
+    status: "Portfolio Source",
+    codeUrl: "https://github.com/Pankaj-Jhajhria/pankaj-ai-portfolio",
   },
 ];
 
